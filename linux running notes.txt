@@ -1,0 +1,237 @@
+Linux OS
+==============
+we want the server
+AWS Free account
+========================
+Gmai id
+credit/debit card - 2rs
+phone
+PAN
+Free account
+
+aws account is reday
+aws console
+
+Server creation:
+=================
+EC2 instnace
+
+Elastic compute cloud, this is uisng for VM servres ( Virtual Machine)
+
+Operating System:
+==================
+1. Windows
+2. Linux 
+   1. CentOS - this 
+   2. Ubuntu
+   3. Unix
+   4. Suse linux
+
+Key pair:
+============
+1. Public Key - pem file - this is store by AWS
+2. Private key - ppk file (putty private key) - this is store by you
+
+Security Group:
+====================
+we are enable the firewall
+
+ssh - 22 - secure shell host
+HTTP - 80 - Hyper Text Transfer protocol
+HTTPS - 443 - Hyper Text Transfer protocol services
+
+EC2 Instnace ready
+
+Putty server
+===============
+puttygen also installed
+
+How to convert with the Public to private key:
+==============================================
+pem file
+ppk is ready
+
+puttygen - this is only using for to convert pem file to ppk file
+
+How to connect the ec2 instance to server:
+============================================
+4 ways
+1. putty server
+
+Linux Commnads:
+===================
+1. pwd
+present working directory
+or
+print working directory
+
+home/ec2-user to root user
+
+sudo -i
+
+2. how to create a directory
+==========================
+mkdir linux
+
+how to go inside the directory:
+============================
+cd directory name
+change directory
+cd linux
+
+how to create a file
+==============
+touch filename
+
+how to remove the file
+=======================
+rm -f f5
+
+chown - change ownership
+
+Permissions:
+============
+R - Read     -r - 4
+w - Write    -w - 2
+x - Execute  -x - 1
+========================
+                 4+2+1 = 7
+
+-rw-r--r-- (file f4)
+===============
+ 6 4 4
+
+rw - users
+r - group
+r - others
+
+f4
+=======
+users - rwx
+group - r
+others - r
+
+
+chmod 744 f4
+
+chown - owners - users
+chmod - file values
+
+chown :jon rwx -group(o) - others(0) file1
+chown :jon 700 file1
+
+ownership of group
+==================
+chgrp
+
+
+ownership:(rights)
+=============
+chown
+ file
+ directory
+  recursive 
+
+permissions:
+=============
+chmod
+
+Ownership
+=======
+file level
+task:
+ file.txt
+chown ec2-user file.txt
+
+group level:
+
+syntax: chown <groupname> <filename>
+chown :ec2-user file.txt
+
+To recursively change ownership of directories 
+=====================================
+mkdir test
+
+file1 file2 file3
+test 
+user
+group
+recursivey
+
+Permission:
+===================
+chmod r,w,x
+
+3 possible classes
+1. user
+2. usergroup
+3. all system users
+
+R  -> Read --4
+W  -> Write --2
+X  -> Execute -1
+================
+     4+2+1 =7
+
+Task is create a file user level(read permission), group (readpermission), other level write permission:
+========================================================================
+ touch
+
+Task is create a directory we need change the permission which user(R+W+X), group, other
+=======================================================================================
+chmod -R 700 linux1
+
+mkdir -p dir1/dir2
+
+Vim Editor:
+============= 
+CLI - Command line Interface
+linux uses a lot of configuration files
+vi: visual display editor
+vim: visual display editor improved
+
+vim had 3 modes
+1. Commnad Mode
+2. Insert Mode(edit mode)
+3. extended command mode
+esc:wq! - save & quite
+exc:q! - it will not save
+
+Can you please generate a ssh keys:
+=============================
+ssh-keygen
+public key
+private key
+
+Monitoring Tool:
+====================
+top
+
+kill -9 30237
+
+80% - Alert manager- E-mail notication
+8gb - 50 GB
+
+you should take proper Approval stockholder(manager, architect,delivery,lead)
+==========================================
+
+Ping Command:
+=================
+PacketInterface Gropper
+
+vmstat:
+==========
+virtual memory statistics
+IO and CPU Activity
+vmstat 1 5
+1 - re-mesured and reported evry second
+5 - value will b erported 5 times and then program will stop
+
+
+USer Adminstratation:
+==========================
+
+
+
+
+
