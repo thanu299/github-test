@@ -1,0 +1,24 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.1.0"
+    }
+  }
+}
+
+provider "aws" {
+  access_key="AKIAWFOSMB7HNEKTW5BB"
+  secret_key="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"
+  region = "us-east-1"
+
+}
+
+# aws ec2 instances
+  resource "aws_instance" "ec2 test" {
+  ami = "ami-0bef6cc322bfff646"
+ instance_tye = "t2.micro"
+  tags = {
+  Name = "ec2 test"
+  }
+}

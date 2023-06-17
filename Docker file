@@ -1,0 +1,15 @@
+FROM centos:7
+MAINTAINER sobha
+RUN yum  update -y
+RUN yum install -y git
+CMD ['/bin/bash']
+
+Execution:
+
+1. Build the Docker Image:
+docker build -t centos .
+2. Creating/running  the Docker:
+docker run -itd --name c1 -p 8080:80 centos
+
+3.Execution/inside the docker
+  docker exec -it c1(containername/conatinerid) /bin/bash
