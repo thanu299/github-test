@@ -1,0 +1,93 @@
+
+module "vpc" {
+   source = "terraform-aws-modules/vpc/aws"
+   version = "2.78.0"
+   # VPC Basic details
+   name = "vpc-dev"
+   cidr = "10.0.0.0/16"
+   azs                = ["us-east-1a", "us-east-1b"]
+   private_subnets    = ["10.0.1.0/24", "10.0.2.0/24"]
+   public_subnets     = ["10.0.101.0/24", "10.0.102.24"]
+   
+   #Database subnets
+   create_database_subnet_group = true
+   create_database_subnet_route_table = true
+   database_subnets   = ["10.0.151.0/24", "10.0.152.0/24"]
+   
+   #NAT Gateway outboubd communication
+   enable_nat_gateway = true
+   single_nat_gateway = true
+   
+   vpc_tags = {
+     Name = "vpc-dev"
+   }
+}
+
+#Input Variable:
+# VPC Name
+variable "vpc_name" {
+ description = "VPC Name"
+ type = string
+ default = "myvpc"
+}
+# VPC CIDR Blcok
+variable "vpc_cidr-block" {
+ description = "VPC CIDR Block"
+ type = string
+ default = "10.0.0.0/16"
+}
+
+# VPC Availability Zone
+variable "vpc_Availability_zones" {
+ description = "VPC Availability Zones"
+ type = string
+ default = ["us-east-1a", "us-east-1b"]
+}
+
+# VPC Public subnets
+variable "vpc_public_subnets" {
+ description = "VPC Public Subnets"
+ type = string
+ default = ["10.0.101.0/24", "10.0.102.24"]
+}
+
+# VPC Private Subnets
+variable "vpc_private_subnets" {
+ description = "VPC Private Subnets"
+ type = string
+ default = ["10.0.1.0/24", "10.0.2.0/24"]
+}
+
+# VPC Database Subnets
+variable "vpc_database_subnets" {
+ description = "VPC Database Subnets"
+ type = list(string)
+ default = ["10.0.151.0/24" , "10.0.152.0/24"]
+}
+
+# VPC create Database Subnets group (True / False)
+variable "vpc_create_database_subnet_group" {
+ description = "VPC Create Database Subnet Group"
+ type = bool
+ default = true
+}
+
+# VPC create Database Subnet Route Table (True / False)
+variable "vpc_create_database_subnet_route_table" {
+ description = "VPC Create Database Subnet Route Table"
+ type = bool
+ default = true
+}
+
+# VPC enable NAT Gateway (True / False)
+variable "vpc_enable_nat_gateway" {
+ description = "Enable NAT Gateway for Private subnet communication"
+ type = bool
+ default = true
+}
+# VPC single NAT Gateway (True / False)
+variable "vpc_single_nat_gateway" {
+ description = "Enable only single NAT Gateway in one Availability zone to save during our demo"
+ type = bool
+ default = true
+}
